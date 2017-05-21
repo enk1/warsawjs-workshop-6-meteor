@@ -156,6 +156,7 @@ function findTouchxy(event){
 }
 
 function draw(){
+    this.context.lineCap = 'round';
     this.context.beginPath();
     this.context.moveTo(privateVars.get(this).prevX, privateVars.get(this).prevY);
     this.context.lineTo(privateVars.get(this).currX, privateVars.get(this).currY);

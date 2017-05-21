@@ -5,7 +5,7 @@
 a {
   text-decoration: none;
 }
-.color-selector{
+.color-selector, .size-selector{
   display: inline-block;
   text-align: center;
   padding: 15px;
