@@ -1,0 +1,15 @@
+<template name="rooms">
+  <h2>Pokoje WarsawJS</h2>
+  <ul>
+    <li>
+      <form class="rooms-room-add">
+        <input type="text" name="title" placeholder="Room name" required>
+        <input type="url" name="url" placeholder="Room Url" required>
+        <input type="submit" name="submit" value="Add new room">
+      </form>
+    </li>
+    {{#each rooms}}
+      <li><a href="#" target="_blank">{{title}}</a> <a href="#" class="rooms-room-remove">remove</a></li>
+    {{/each}}
+  </ul>
+</template>
