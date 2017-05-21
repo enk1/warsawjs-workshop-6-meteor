@@ -15,7 +15,8 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
-  'log'(text){
-    console.log(text);
+  'links.remove'(linkId){
+    check(linkId, String);
+    Links.remove(linkId);
   }
 });

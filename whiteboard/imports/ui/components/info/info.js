@@ -29,4 +29,11 @@ Template.info.events({
       }
     });
   },
+  'click .info-link-remove'(event) {
+    event.preventDefault();
+    console.log(this._id);
+    Meteor.call('links.remove', this._id, (error)=>{
+      if(error) alert(error.error);
+    });
+  }
 });
