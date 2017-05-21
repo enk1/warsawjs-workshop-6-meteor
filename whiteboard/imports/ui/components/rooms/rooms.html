@@ -7,7 +7,7 @@
       </form>
    <ul>
     {{#each rooms}}
-      <li><a href="#" target="_blank">{{title}}</a> <a href="#" class="rooms-room-remove">remove</a></li>
+      <li><a href="{{pathFor 'App.room' id=_id}}">{{title}}</a> <a href="#" class="rooms-room-remove">remove</a></li>
     {{/each}}
   </ul>
 </template>
