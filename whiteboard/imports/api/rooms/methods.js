@@ -16,5 +16,14 @@ Meteor.methods({
   'rooms.remove'(linkId){
     check(linkId, String);
     Rooms.remove(linkId);
+  },
+  'rooms.updateDataUrl'(roomId, dataUrl) {
+    check(roomId, String);
+    check(dataUrl, String);
+
+    Rooms.update(roomId,{$set: {
+      dataUrl,
+      updatedAt: new Date()}
+     });
   }
 });

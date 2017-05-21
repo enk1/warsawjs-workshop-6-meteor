@@ -1,5 +1,5 @@
 // Private variables
-const DEFAULT_PRIVATE_VARS= {
+const DEFAULT_PRIVATE_VARS = {
   prevX: 0,
   currX: 0,
   prevY: 0,
