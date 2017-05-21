@@ -18,14 +18,13 @@ Template.rooms.events({
 
     const target = event.target;
     const title = target.title;
-    const url = target.url;
+    
 
-    Meteor.call('rooms.insert', title.value, url.value, (error) => {
+    Meteor.call('rooms.insert', title.value, (error) => {
       if (error) {
         alert(error.error);
       } else {
         title.value = '';
-        url.value = '';
       }
     });
   },
