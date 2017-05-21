@@ -15,4 +15,7 @@ Meteor.methods({
       createdAt: new Date(),
     });
   },
+  'log'(text){
+    console.log(text);
+  }
 });
