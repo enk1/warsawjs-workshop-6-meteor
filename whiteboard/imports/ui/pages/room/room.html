@@ -1,5 +1,18 @@
 <template name="App_room">
   <h3>Room name: {{room.title}}, id: {{room._id}}</h3>
+  <div class="menu">
+      <button class="clear">Wyczyść</button>
+      <span class="size-selector">Rozmiar: <input type="number" class="changeSize" in="1" step="1" value="2"></span>
+      <span class="color-selector">
+        <p>Kolor:</p>
+        <a href="#" class="option black" data-color="black"></a>
+        <a href="#" class="option red" data-color="red"></a>
+        <a href="#" class="option blue" data-color="blue"></a>
+        <a href="#" class="option green" data-color="green"></a>
+        <a href="#" class="option yellow" data-color="yellow"></a>
+        <a href="#" class="option white" data-color="white"></a>
+     </span>
+  </div>
   <canvas id="canvas" width="1000" height="400"></canvas>
   <div class="back"><a href="{{pathFor 'App.home'}}">powrót</a></div>
 </template>

@@ -1,3 +1,43 @@
 #canvas {
     border: 1px solid black;
+    margin: 25px 0 25px 0;
+}
+.menu {
+
+}
+.color-selector{
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
+}
+
+.color-selector .option{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+}
+
+.color-selector .option.black{
+  background-color: black;
+}
+
+.color-selector .option.red{
+  background-color: red;
+}
+
+.color-selector .option.blue{
+  background-color: blue;
+}
+
+.color-selector .option.yellow{
+  background-color: yellow;
+}
+
+.color-selector .option.green{
+  background-color: green;
+}
+
+.color-selector .option.white{
+  background-color: white;
 }

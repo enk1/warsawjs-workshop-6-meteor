@@ -41,3 +41,25 @@ Template.App_room.helpers({
         return Rooms.findOne(FlowRouter.getParam('id'));
     }
 });
+
+Template.App_room.events({
+    'click .clear'(event){
+        event.preventDefault();
+        if(canvas_manager){
+            canvas_manager.clear();
+        }
+    },
+    'change .size-selector input': function(e) {
+        if(canvas_manager){
+        const size = $(e.currentTarget).val();
+        canvas_manager.size = size;
+        }
+    },
+    'click .color-selector .option': function (e) {
+        e.preventDefault();
+        if(canvas_manager){
+        const color = $(e.currentTarget).data('color');
+        canvas_manager.color = color;
+        }
+    },
+});
