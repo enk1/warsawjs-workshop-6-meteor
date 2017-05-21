@@ -31,7 +31,7 @@ Template.rooms.events({
   },
   'click .rooms-room-remove'(event) {
     event.preventDefault();
-    console.log(this._id);
+    //console.log(this._id);
     Meteor.call('rooms.remove', this._id, (error)=>{
       if(error) alert(error.error);
     });
