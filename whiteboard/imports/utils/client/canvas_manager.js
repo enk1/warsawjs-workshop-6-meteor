@@ -68,10 +68,10 @@ export class CanvasManager{
 
   // Instance Methods
   clear() {
-    if (confirm("Czy na pewno chcesz wszystko usunąć?")) {
+    
       this.context.clearRect(0, 0, this.width, this.height);
       this.callback && this.callback();
-    }
+    
   }
 
   load(dataUrl){

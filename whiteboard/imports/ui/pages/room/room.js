@@ -36,7 +36,11 @@ Template.App_room.helpers({
     room(){
         const room = Rooms.findOne(FlowRouter.getParam('id'));
         if(room && canvas_manager) {
-            canvas_manager.load(room.dataUrl);
+            if(room.dataUrl){
+                canvas_manager.load(room.dataUrl);
+            } else {
+                canvas_manager.clear();
+            }
         }
         return Rooms.findOne(FlowRouter.getParam('id'));
     }
@@ -44,22 +48,26 @@ Template.App_room.helpers({
 
 Template.App_room.events({
     'click .clear'(event){
-        event.preventDefault();
-        if(canvas_manager){
-            canvas_manager.clear();
+        event.preventDefault();        
+        if (confirm("Czy na pewno chcesz wszystko usunąć?")) {
+            const room = Rooms.findOne(FlowRouter.getParam('id'));
+            if(room && canvas_manager){
+                canvas_manager.clear();
+                Meteor.call('rooms.updateDataUrl', room._id, null);
+            }
         }
     },
     'change .size-selector input': function(e) {
         if(canvas_manager){
-        const size = $(e.currentTarget).val();
-        canvas_manager.size = size;
+            const size = $(e.currentTarget).val();
+            canvas_manager.size = size;
         }
     },
     'click .color-selector .option': function (e) {
         e.preventDefault();
         if(canvas_manager){
-        const color = $(e.currentTarget).data('color');
-        canvas_manager.color = color;
+            const color = $(e.currentTarget).data('color');
+            canvas_manager.color = color;
         }
     },
 });

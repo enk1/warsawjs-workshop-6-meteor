@@ -19,7 +19,7 @@ Meteor.methods({
   },
   'rooms.updateDataUrl'(roomId, dataUrl) {
     check(roomId, String);
-    check(dataUrl, String);
+    //check(dataUrl, String);
 
     Rooms.update(roomId,{$set: {
       dataUrl,
